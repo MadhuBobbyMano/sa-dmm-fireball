@@ -1,0 +1,42 @@
+{
+  "logout_url": "/pkmslogout",
+  "app_title": "dmmapp",
+  "siteConfig": {
+    "deepLinkEnabled": false,
+    "frame": {
+      "background" : "subdued",
+      "header" : {
+        "colorScheme" : "dark"
+      }
+    }
+  },
+  "filters": {
+    "org": {
+      "index": 1,
+      "widgetProperties" : {
+        "promptLabel" : "Organization"
+      },
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/organizations.json",
+        "serviceUrl": "services/filters/orgs"
+      },
+      "widgetType": "Select"
+    }
+  },
+  "views": {
+    "clinic": {
+      "index": 1,
+      "triggers": [
+        "_startup_"
+      ],
+      "_ref": true
+    },
+    "patient": {
+      "index": 2,
+      "triggers": [
+        "patientGrid.name.change"
+      ],
+      "_ref": true
+    }
+  }
+}

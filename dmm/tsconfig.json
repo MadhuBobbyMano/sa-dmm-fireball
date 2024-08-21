@@ -1,0 +1,3 @@
+{
+  "extends": "./target/js-build/tsconfig.test.json"
+}

@@ -1,0 +1,7 @@
+{
+    "appModuleName" : "dmmapp",
+    "projectName" : "dmmapp",
+    "projectContext" : "dmmapp",
+    "contextPath" : "/",
+    "noAnalytics" : true
+}

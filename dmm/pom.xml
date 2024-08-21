@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.premierinc.myanalytics</groupId>
+        <artifactId>dashboard-parent</artifactId>
+        <version>XSC-SNAPSHOT</version>
+        <relativePath></relativePath>
+    </parent>
+
+    <!-- TODO update these as needed -->
+    <groupId>com.premierinc.dmmapp</groupId>
+    <artifactId>dmm</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>DmmApp</name>
+    <description>Description</description>
+
+    <scm>
+        <!-- TODO update this to point to your location in GitHub! -->
+        <developerConnection>scm:git:ssh://git@github.com:PremierInc/dmm.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-artifacts</id>
+            <url>https://nexus.premierinc.com/artifacts/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-artifacts</id>
+            <url>https://nexus.premierinc.com/artifacts/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <no-docker>true</no-docker>
+        <docker.dtr.org>dmmapp_org</docker.dtr.org>
+    </properties>
+
+    <dependencies>
+
+        <!--Database-->
+        <!--In Memory Database - Can be removed for your chosen DB driver-->
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+        </dependency>
+
+        <!--Postgres Driver and Pooling Manager - Uncomment if you are using Postgres or remove-->
+        <!--<dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>-->
+
+        <!--Test-->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <build>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>**/*.p12</exclude>
+                    <exclude>**/*.jks</exclude>
+                    <exclude>**/favicon.ico</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*.p12</include>
+                    <include>**/*.jks</include>
+                    <include>**/favicon.ico</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <!-- build plugins not bound as war lifecycle defaults must be repeated here -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <spring.profiles.active>local</spring.profiles.active>
+                        <HOSTNAME>LOCAL</HOSTNAME>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>docker-clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>stop</goal>
+                            <goal>remove</goal>
+                        </goals>
+                        <configuration>
+                            <removeAll>true</removeAll>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>docker-build</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>docker-start</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>docker-stop</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>docker-push</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skip>${no-docker}</skip>
+                    <images combine.self="override">
+                        <image>
+                            <name>${docker.dtr.url}/${docker.dtr.org}/${docker.dtr.repo}</name>
+                            <alias>${project.artifactId}</alias>
+                            <build>
+                                <skip>${no-docker}</skip>
+                                <dockerFileDir>${project.basedir}/src/main/docker</dockerFileDir>
+                                <tags>
+                                    <tag>latest</tag>
+                                    <tag>${project.version}</tag>
+                                </tags>
+                                <assembly>
+                                    <basedir>/opt/app/${project.artifactId}</basedir>
+                                    <inline>
+                                        <files>
+                                            <file>
+                                                <source>${project.build.directory}/${project.artifactId}-${project.version}.jar</source>
+                                                <destName>${project.artifactId}.jar</destName>
+                                            </file>
+                                            <file>
+                                                <source>${project.basedir}/src/main/resources/entrypoint.sh</source>
+                                                <destName>entrypoint.sh</destName>
+                                                <fileMode>755</fileMode>
+                                            </file>
+                                        </files>
+                                    </inline>
+                                </assembly>
+                            </build>
+                            <run>
+                                <skip>${no-docker}</skip>
+                            </run>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>no-docker</id>
+            <properties>
+                <no-docker>true</no-docker>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>

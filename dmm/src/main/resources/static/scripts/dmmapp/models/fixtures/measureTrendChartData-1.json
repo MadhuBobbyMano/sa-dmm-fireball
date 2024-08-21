@@ -1,0 +1,41 @@
+{
+  "measureDetailChart": {
+    "timeframes": [
+      {
+        "timeframeDesc": "Tracked Timeframe",
+        "startDate": "January 1, 2018",
+        "endDate": "December 31, 2018"
+      }
+    ],
+    "labels": [
+      "Qtr 1",
+      "Qtr 2",
+      "Qtr 3",
+      "Qtr 4"
+    ],
+    "chartSeries": [
+      {
+        "seriesDescr": "Blood Oxygen",
+        "dataPoints": [
+          99,
+          98,
+          99,
+          99
+        ]
+      },
+      {
+        "seriesDescr": "Required REM Sleep",
+        "dataPoints": [
+          87,
+          92,
+          45,
+          94
+        ]
+      }
+    ]
+  },
+  "measure": {
+    "statusId": 1,
+    "measureDesc": "Patient Metrics"
+  }
+}

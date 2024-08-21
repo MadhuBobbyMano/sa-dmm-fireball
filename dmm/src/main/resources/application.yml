@@ -1,0 +1,131 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /dmmapp
+  tomcat:
+    basedir: /tmp
+    # Logging Properties
+    accesslog:
+      directory: logs
+      enabled: true
+      pattern: common
+      prefix: access_log
+      suffix: .log
+
+fireball:
+  moduleName: dmmapp
+  isProd: false # this should be set to true for any external environments including prod-demo
+  token:
+    # TODO set unique value for fireball.token.secret here for local development and secretly via Bamboo for real environments
+    secret: changeme
+  header:
+    # environment tells the header which PINCAI environment to use when proxying requests for
+    # displaying/adding/removing user applications and communities.
+    # Valid values are DEVI, QAI, PRODUCTION.  Can be set on a per-profile basis
+    environment: DEVI
+
+spring:
+  application:
+    name: dmmapp
+  cloud: # TODO configure config server uri and credentials
+    config:
+      enabled: false
+# TODO If you want to use cloud configuration, change enabled to true and set the below properties
+#  name: dmmapp
+#  uri: 'https://ucp2np-ingress.premierinc.com:STATIC_PORT/'
+#  username: username
+#  password: password
+#  fail-fast: true
+#  label: develop
+
+# Test/in-memory data source config - remove!
+  datasource:
+    url: jdbc:sqlite:file:test.db?mode=memory
+    driver-class-name: org.sqlite.JDBC
+    username: sa
+
+# Postgres Example Config
+#    driver-class-name: org.postgresql.Driver
+#    type: com.zaxxer.hikari.HikariDataSource
+#    hikari:
+#      minimumIdle: 2
+#      maximumPoolSize: 10
+#    url: jdbc:postgresql://localhost:5432/database
+#    username: username
+#    password: password
+
+security:
+  basic:
+    enabled: false
+
+management:
+  enabled: false
+  security:
+    enabled: true
+
+endpoints:
+  sensitive: true
+  enabled: false
+
+# This logging format will allow your logs to automatically get picked up and sent to the Premier ELK Stack if running on Docker UCP.
+# Avoid logging messages with line breaks for best results.
+logging:
+  pattern:
+    console: "| DmmApp | ${HOSTNAME} | %-25d{MM/dd/yyyy hh:mm:ss.SSS a} | %-5level | %-25.25thread | %-40.40logger{2} | %message %n"
+  level:
+    root: info
+    com.premierinc.dmmapp: info
+    org.springframework: info
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+management:
+  enabled: true
+  security:
+    enabled: false
+
+endpoints:
+  sensitive: false
+  enabled: true
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    # TODO update ds for each env
+
+---
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    # TODO update ds for each env
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: perf
+  datasource:
+    # TODO update ds for each env
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    # TODO update ds for each env
+
+fireball:
+  isProd: true

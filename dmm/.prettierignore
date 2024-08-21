@@ -1,0 +1,7 @@
+# Ignore artifacts:
+node
+node_modules
+coverage
+src/main/java
+target
+package-lock.json

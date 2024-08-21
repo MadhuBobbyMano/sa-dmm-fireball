@@ -1,0 +1,29 @@
+{
+  "overview" : {
+    "title" : "Patients"
+  },
+  "columns" : {
+    "name" : {
+      "index" : 1,
+      "name" : "Name",
+      "sortInd" : 1,
+      "sortable" : true,
+      "columnClass" : "hyperlink"
+    },
+    "age" : {
+      "index" : 2,
+      "name" : "Age",
+      "sortable" : false
+    }
+  },
+  "filters" : {
+    "name" : {
+      "name" : "Name",
+      "index" : 1
+    }
+  },
+  "data" : [
+    {"id" : 1, "name": "Bob", "age": 21},
+    {"id" : 2, "name": "Susan", "age": 33}
+  ]
+}
