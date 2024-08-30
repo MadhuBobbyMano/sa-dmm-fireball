@@ -39,7 +39,7 @@
 .managedFacilitiesList{
   float: left;
   color: white;
-  margin-top: 10px ;
+  margin: 14px 10px;
   font-size: large;
   font-weight: 600;
   padding-left: 5px;
@@ -47,7 +47,7 @@
 
 .showFacilitiesWithoutMarkup{
   float: right;
-  margin: 10px;
+  margin: 14px 10px;
   width: fit-content;
   color: white;
   font-weight: 600;
@@ -66,7 +66,7 @@
 }
 .createMarkup{
   float: right;
-  margin: 10px;
+  margin: 14px 10px;
   background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
   border: 1px solid white;
   border-radius: 2px;
@@ -75,7 +75,7 @@
 
 .showFilters{
   float: right;
-  margin: 10px;
+  margin: 14px 10px;
   background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
   border: 1px solid white;
   border-radius: 2px;
@@ -85,7 +85,7 @@
 
 .hideFilters{
   float: right;
-  margin: 10px;
+  margin: 14px 10px;
   background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
   border: 1px solid white;
   border-radius: 2px;
