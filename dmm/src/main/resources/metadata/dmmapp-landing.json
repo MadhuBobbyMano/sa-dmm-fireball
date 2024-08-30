@@ -1,8 +1,9 @@
 {
-  "title": "Clinic Patients",
-  "breadcrumbTitle": "Clinic Patients",
+  "title": "Distributor Markup",
+  "breadcrumbTitle": "distributor markup",
   "filters": {
-    "org": "on"
+    "org": "on",
+    "help": "on"
   },
   "menuOptions": {
   },
@@ -11,6 +12,14 @@
     "deepLinkParams" : { }
   },
   "widgets": {
+ "withoutMarkup":{
+  "index" : 1,
+  "widgetData" : {},
+  "widgetProperties" : {
+    "label": "Select facilities Without Markup"
+  },
+  "widgetType" : "Button"
+ },
     "patientGrid": {
       "index": 1,
       "widgetBindings": {
@@ -27,6 +36,7 @@
         "noDataMessage": "There is no data"
       },
       "widgetType": "GridTable"
+
     }
   }
 }

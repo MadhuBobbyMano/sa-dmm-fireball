@@ -2,6 +2,6 @@
     "appModuleName" : "dmmapp",
     "projectName" : "dmmapp",
     "projectContext" : "dmmapp",
-    "contextPath" : "/",
+    "contextPath" : "/dmmapp",
     "noAnalytics" : true
 }

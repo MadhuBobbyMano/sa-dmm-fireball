@@ -1,3 +1,85 @@
 @use '~@pincds/core/full' as pds with (
   $enable-dark-scheme: true
 );
+
+@import "~ag-grid-community/styles/ag-grid.css";
+@import "~ag-grid-community/styles/ag-theme-alpine.css";
+
+
+.withoutMarkupContainer{
+  background-color: cadetblue;
+  align-items: center;
+
+}
+.createNewMkupButton{
+  border:1px;
+  color:black;
+  float:right;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-radius: 8px;
+
+}
+
+
+.managedFacilitiesButton {
+  float:right;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.showHideButton {
+  border:1px;
+  float:right;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+  border-radius: 8px;
+
+}
+.hideButton{
+  border:1px;
+  float:right;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+  border-radius: 8px;
+
+}
+.facilitiesListLabel{
+  font-weight:bold;
+  float:left;
+  color: white;
+  font-size: 18px;
+  display: inline;
+  position: relative;
+  top:5px;
+}
+.facilitiesListIcon{
+  float:left;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.button{
+  align-self: flex-end;
+}
+
+.btn-primary{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  width: 130px;
+  height: 30px;
+  font-size: 14px;
+  border: none;
+ position: relative;
+  line-height: 25px;
+
+}
+
+.entity_class{
+  width: 40px;
+}
+
+

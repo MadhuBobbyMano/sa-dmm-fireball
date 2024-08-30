@@ -1,0 +1,156 @@
+{
+  "title": "Distrbutor Markup",
+  "breadcrumbTitle": "Facilities Without Markup",
+  "filters": {
+    "org": "on",
+    "help": "on"
+  },
+  "menuOptions": {
+  },
+  "viewProperties": {
+    "singleInstance": true,
+    "deepLinkParams": {}
+  },
+  "widgets": {
+    "withoutMarkupContainer": {
+      "index": 1,
+      "widgetData": {},
+      "widgetProperties": {
+      },
+      "widgetType": "SimpleContainer"
+    },
+    "facilitiesListIcon": {
+      "index" : 1.4,
+      "container": "withoutMarkupContainer",
+      "widgetData" : {},
+      "widgetProperties" : {
+        "children": "I am from widget properties",
+        "variant": "premier",
+        "color": "green"
+      },
+      "widgetType" : "AlphaIcon"
+    },
+    "facilitiesListLabel": {
+      "index" : 1.5,
+      "container": "withoutMarkupContainer",
+      "widgetData" : {},
+      "widgetProperties" : {
+        "tagName": "p",
+        "children": [
+          {
+            "text": "Facilities List"
+          }
+        ]
+      },
+      "widgetType" : "Text"
+    },
+    "managedFacilitiesButton":{
+      "index" : 1.3,
+      "container": "withoutMarkupContainer",
+      "widgetData" : {},
+      "widgetProperties" : {
+        "label": "Select only Managed Facilities",
+        "baseClass": "button-default"
+      },
+      "widgetType" : "Button"
+    },
+    "createNewMkupButton":{
+      "index" : 1.2,
+      "container": "withoutMarkupContainer",
+      "widgetData" : {},
+      "widgetProperties" : {
+        "label": "Create New Markup",
+        "iconClass": "glyphicon glyphicon-plus",
+        "baseClass": "button-secondary",
+        "color": "green"
+      },
+      "widgetType" : "Button"
+    },
+    "showHideButton":{
+      "index" : 1.1,
+      "container": "withoutMarkupContainer",
+      "widgetData" : {},
+      "widgetBindings": {
+        "showHideButton": {
+          "event":"click",
+          "action": "hide"
+        },
+        "hideButton": {
+          "event":"click",
+          "action": "show"
+        }
+      },
+      "widgetProperties" : {
+        "label": "Show filters",
+        "baseClass": "button-secondary"
+      },
+      "widgetType" : "Button"
+    },
+    "hideButton":{
+      "index" : 1.1,
+      "container": "withoutMarkupContainer",
+      "widgetData" : {},
+      "widgetProperties" : {
+        "hidden": "true",
+        "label": "Hide filters",
+        "baseClass": "button-secondary"
+      },
+      "widgetBindings": {
+        "showHideButton": {
+          "event":"click",
+          "action": "show"
+        },
+        "hideButton": {
+          "event":"click",
+          "action": "hide"
+        }
+      },
+      "widgetType" : "Button"
+    },
+    "newMkupGrid": {
+      "index": 4,
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/withoutMarkupStatic.json",
+        "fixtures": true,
+        "serviceUrl": "services/your/service/here"
+      },
+      "widgetProperties": {
+        "components":[
+          "withoutMarkup"
+        ],
+        "gridOptions": {
+          "pagination": true,
+          "paginationPageSize": 25,
+          "rowSelection": "multiple",
+          "suppressRowClickSelection": true,
+          "defaultColDef": {
+            "flex": 1
+          },
+          "columnDefs": [
+            {
+              "headerName": "Entity Code",
+              "field": "entity_code",
+              "sortable": true,
+              "resizable": true,
+              "suppressMenu": true,
+              "cellClass": "entity_class"
+            },
+            {
+              "headerName": "Facility",
+              "field": "facility",
+              "sortable": true,
+              "resizable": true
+
+            },
+            {
+              "headerName": " ",
+              "field": "button",
+              "cellRenderer": "withoutMarkup"
+            }
+          ]
+        }
+      },
+      "widgetType": "AGGrid"
+    }
+  }
+}

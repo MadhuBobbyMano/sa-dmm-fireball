@@ -1,6 +1,7 @@
 {
+  "title": "Distributor Markup",
   "logout_url": "/pkmslogout",
-  "app_title": "dmmapp",
+  "app_title": "Distributor Mark-Up Manager",
   "siteConfig": {
     "deepLinkEnabled": false,
     "frame": {
@@ -11,30 +12,43 @@
     }
   },
   "filters": {
+
     "org": {
-      "index": 1,
+      "index": 2,
       "widgetProperties" : {
-        "promptLabel" : "Organization"
+        "promptLabel" : "Parent Health System"
       },
       "widgetData": {
         "fixtureUrl": "scripts/dmmapp/models/fixtures/organizations.json",
         "serviceUrl": "services/filters/orgs"
       },
       "widgetType": "Select"
+    },
+
+    "help":{
+      "index" : 3,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "label": "Help",
+        "targetUrl": "https://distributormarkup.premierinc.com/content/SupplyChain/dmm-help/WebHelp/Content/Home.htm\n"
+      },
+
+      "widgetType" : "Button"
     }
   },
   "views": {
-    "clinic": {
+    "landing": {
       "index": 1,
       "triggers": [
-        "_startup_"
+        "_startup_",
+        "managedFacilitiesButton.change"
       ],
       "_ref": true
     },
-    "patient": {
-      "index": 2,
+    "withoutMarkup": {
+      "index": 3,
       "triggers": [
-        "patientGrid.name.change"
+        "withoutMarkup.change"
       ],
       "_ref": true
     }
