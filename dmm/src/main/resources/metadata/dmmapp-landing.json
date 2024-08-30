@@ -1,0 +1,235 @@
+{
+  "title": "Distributor Markup",
+  "breadcrumbTitle": "Distributor Markup",
+  "filters": {
+    "orgFilter": "on",
+    "help": "on",
+    "showFacilitiesWithoutMarkup": "on"
+  },
+  "menuOptions": {
+  },
+  "viewProperties" : {
+    "singleInstance" : true,
+    "deepLinkParams" : { }
+  },
+  "widgets": {
+    "simpleContainer": {
+      "index" : 1,
+      "widgetData" : {},
+      "widgetProperties" : {},
+      "widgetType" : "SimpleContainer"
+    },
+    "managedFacilitiesList": {
+      "container": "simpleContainer",
+      "index" : 1.1,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "tagName": "p",
+        "color": "warning",
+        "children": [
+          {
+            "text": "Managed Facilities List"
+          }
+        ]
+      },
+      "widgetType" : "Text"
+    },
+    "showFacilitiesWithoutMarkup": {
+      "container": "simpleContainer",
+      "index" : 1.4,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "label": "Show Facilities without Markup"
+      },
+      "widgetType" : "Button"
+    },
+    "createMarkup": {
+      "container": "simpleContainer",
+      "index" : 1.3,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "iconClass": "glyphicon glyphicon-plus",
+        "label": "Create Markup",
+        "baseClass": "button-default"
+      },
+      "widgetType" : "Button"
+    },
+    "showFilters": {
+      "container": "simpleContainer",
+      "index" : 1.2,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "label": "Show Filters",
+        "baseClass": "button-default"
+      },
+      "widgetBindings": {
+        "showFilters": {
+          "event": "click",
+          "action": "hide"
+        },
+        "hideFilters": {
+          "event": "click",
+          "action": "show"
+        }
+      },
+      "widgetType" : "Button"
+    },
+    "hideFilters": {
+      "container": "simpleContainer",
+      "index" : 1.2,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "hidden": "true",
+        "label": "Hide Filters",
+        "baseClass": "button-default"
+      },
+      "widgetBindings" : {
+        "showFilters": {
+          "event": "click",
+          "action": "show"
+        },
+        "hideFilters": {
+          "event": "click",
+          "action": "hide"
+        }
+      },
+      "widgetType" : "Button"
+    },
+    "container2": {
+      "index" : 2,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "hidden": "true"
+      },
+      "widgetType" : "SimpleContainer",
+      "widgetBindings": {
+        "showFilters": {
+          "event": "click",
+          "action": "show"
+        },
+        "hideFilters": {
+          "event": "click",
+          "action": "hide"
+        }
+      }
+    },
+    "entityCode": {
+      "container": "container2",
+      "index": 2.1,
+      "widgetProperties": {
+        "promptLabel": "Entity Code"
+      },
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/orgFilterData.json",
+        "fixtures": true
+      },
+      "widgetType": "Select"
+    },
+    "facility": {
+      "container": "container2",
+      "index": 2.2,
+      "widgetProperties": {
+        "promptLabel": "Facility"
+      },
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/orgFilterData.json",
+        "fixtures": true
+      },
+      "widgetType": "Select"
+    },
+    "distributor": {
+      "container": "container2", "index": 2.3,
+      "widgetProperties": {
+        "promptLabel": "Distributor"
+      },
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/orgFilterData.json",
+        "fixtures": true
+      },
+      "widgetType": "Select"
+    },
+    "clear": {
+      "container": "container2",
+      "index" : 2.5,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "label": "Clear"
+      },
+      "widgetType" : "Button"
+    },
+    "filterButton": {
+      "container": "container2",
+      "index" : 2.4,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "label": "Filter",
+        "baseClass": "button-default"
+      },
+      "widgetType" : "Button"
+    },
+    "managedFacilitiesListGrid": {
+      "index" : 3,
+      "widgetData" : {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/ag-grid-data-${orgFilter.id}.json",
+        "fixtures": true,
+        "serviceUrl": "services/your/service/here"
+      },
+
+      "widgetProperties" : {
+        "components": ["editMarkUp"],
+        "gridOptions": {
+          "pagination": true,
+          "paginationPageSize": 25,
+          "rowSelection": "multiple",
+          "suppressRowClickSelection": true,
+          "defaultColDef": {
+            "flex": 1
+          },
+          "columnDefs": [
+            {
+              "headerName": "Entity Code",
+              "field": "Entity Code",
+              "cellClass": "hyperlink",
+              "sortable": true,
+              "resizable": true
+            },
+            {
+              "headerName": "Facility",
+              "field": "Facility",
+              "resizable": true
+            },
+            {
+              "headerName": "Distributor",
+              "field": "Distributor",
+              "resizable": true
+            },
+            {
+              "headerName": "Start Date",
+              "field": "Start Date",
+              "sortable": true,
+              "resizable": true
+            },
+            {
+              "headerName": "End Date",
+              "field": "End Date",
+              "sortable": true,
+              "resizable": true
+            },
+            {
+              "headerName": "Markup",
+              "field": "Markup",
+              "sortable": true,
+              "resizable": true
+            },
+            {
+            "headerName": "",
+            "field": "button",
+            "cellRenderer": "editMarkUp"
+            }
+          ]
+        }
+      },
+      "widgetType" : "AGGrid"
+    }
+  }
+}

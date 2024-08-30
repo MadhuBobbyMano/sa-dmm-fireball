@@ -1,3 +1,184 @@
 @use '~@pincds/core/full' as pds with (
   $enable-dark-scheme: true
 );
+
+@import "~ag-grid-community/styles/ag-grid.css";
+@import "~ag-grid-community/styles/ag-theme-alpine.css";
+
+
+.primary-view-filter-container{
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.pds-callout--error{
+  position: relative;
+  bottom: 27px;
+  margin-bottom: -30px;
+}
+
+.pds-callout__body{
+  color: black;
+  font-size: 15px;
+}
+
+.fireball-widget > .begin{
+  background: rgb(188, 232, 241);
+  height: 80px;
+}
+
+.button-label{
+  //color: blue;
+  font-size: 17px;
+}
+
+.help{
+  margin-left: 10px;
+}
+.managedFacilitiesList{
+  float: left;
+  color: white;
+  margin-top: 10px ;
+  font-size: large;
+  font-weight: 600;
+  padding-left: 5px;
+}
+
+.showFacilitiesWithoutMarkup{
+  float: right;
+  margin: 10px;
+  width: fit-content;
+  color: white;
+  font-weight: 600;
+}
+
+.showFacilitiesWithoutMarkup span.button-label{
+  color:white;
+}
+
+.createMarkup span.button-label{
+  color: black;
+}
+
+.showFilters span.button-label{
+  color: black;
+}
+.createMarkup{
+  float: right;
+  margin: 10px;
+  background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
+  border: 1px solid white;
+  border-radius: 2px;
+  color:white ;
+}
+
+.showFilters{
+  float: right;
+  margin: 10px;
+  background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
+  border: 1px solid white;
+  border-radius: 2px;
+  padding: 0px 5px;
+  width: 103px;
+}
+
+.hideFilters{
+  float: right;
+  margin: 10px;
+  background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
+  border: 1px solid white;
+  border-radius: 2px;
+  padding-left: 10px;
+  width: 103px;
+}
+.entityCode{
+  float: left;
+  width: 150px;
+  padding-left: 5px;
+}
+
+.entityCode .btn-default{
+  width: 140px;
+}
+
+.facility{
+  float: left;
+  width: 150px;
+}
+
+
+.facility .btn-default{
+  width: 140px;
+}
+.distributor{
+  float: left;
+  width: 150px;
+}
+
+.distributor .btn-default{
+  width: 140px;
+}
+.simpleContainer{
+  background: #3896ce;
+  height: max-content;
+}
+
+.pds-text{
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.container2{
+  background: #b1d1e3;
+  padding-bottom: 5px;
+}
+
+.clear{
+  float: right;
+  margin-top: 25px;
+}
+
+.filterButton{
+  float: right;
+  margin: 25px 10px 0px 5px;
+  background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
+  border: 1px solid white;
+  border-radius: 2px;
+  //color: white;
+  //text-align: center;
+  padding-left: 5px;
+  width: 50px;
+}
+
+.pds-icon{
+  padding-top: 5px ;
+
+  border-radius: 50%;
+
+  background: #eeeaea;
+}
+.dmmapp{
+  width: 1000px;
+}
+
+.fireball-container{
+  background: #116CB3;
+}
+
+.pds-frame__content{
+  background: #116CB3;
+}
+
+header{
+  background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
+  font-weight: 700;
+  font-size: xx-large;
+  color: black;
+}
+
+.btn-primary{
+  line-height: 25px;
+  border-radius: 8px;
+}
