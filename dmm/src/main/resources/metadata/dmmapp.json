@@ -31,26 +31,6 @@
         "targetUrl": "https://distributormarkup.premierinc.com/content/SupplyChain/dmm-help/WebHelp/Content/Home.html"
       },
       "widgetType": "Button"
-    },
-    "begin": {
-      "index": 1.1,
-      "widgetData": {
-        "fixtureUrl": "scripts/dmmapp/models/fixtures/beginMessage.json",
-        "fixtures": true,
-        "serviceUrl": "services/your/service/here"
-      },
-      "widgetBindings": {
-        "orgFilter": {
-          "event": "change",
-          "action": "hide"
-        }
-      },
-      "widgetProperties": {
-        "border": "",
-        "title": "",
-        "dismissible": "true"
-      },
-      "widgetType": "Callout"
     }
 
   },

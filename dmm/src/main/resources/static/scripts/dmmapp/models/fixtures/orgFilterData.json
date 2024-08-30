@@ -1,15 +1,7 @@
-{
-  "overview": {
-    "title": "Managed Facilities List"
-  },
-  "data": [
-    {
-      "id": "1",
-      "label": "ACURITY FKA GNYHA SERVICES INC/NY5011 "
-    },
-    {
-      "id": "2",
-      "label": "ADVENTHEALTH/FL0343 "
-    }
-  ]
-}
+[
+  {"id":"0","label":"Select One"},
+  {"id":"1","label":"ACURITY FKA GNYHA SERVICES INC/NY5011 "},
+  {"id":"2","label":"ADVENTHEALTH/FL0343"},
+  {"id":"3","label":"ACURITY FKA GNYHA SERVICES INC/NY5011 "},
+  {"id":"4","label":"ADVENTHEALTH/FL0343"}
+]

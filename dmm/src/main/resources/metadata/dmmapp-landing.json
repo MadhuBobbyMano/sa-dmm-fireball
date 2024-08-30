@@ -3,8 +3,7 @@
   "breadcrumbTitle": "Distributor Markup",
   "filters": {
     "orgFilter": "on",
-    "help": "on",
-    "showFacilitiesWithoutMarkup": "on"
+    "help": "on"
   },
   "menuOptions": {
   },
@@ -14,14 +13,27 @@
   },
   "widgets": {
     "simpleContainer": {
-      "index" : 1,
+      "index" : 2,
+      "widgetBindings": {
+        "orgFilter": [{
+          "event": "change",
+          "action": "hide",
+          "query": "id=0"
+        }, {
+          "event": "change",
+          "action": "show",
+          "query": "id!=0"
+        }]
+      },
       "widgetData" : {},
-      "widgetProperties" : {},
+      "widgetProperties" : {
+        "hidden": "true"
+      },
       "widgetType" : "SimpleContainer"
     },
     "managedFacilitiesList": {
       "container": "simpleContainer",
-      "index" : 1.1,
+      "index" : 2.1,
       "widgetData" : {},
       "widgetProperties" : {
         "tagName": "p",
@@ -36,7 +48,7 @@
     },
     "showFacilitiesWithoutMarkup": {
       "container": "simpleContainer",
-      "index" : 1.4,
+      "index" : 2.4,
       "widgetData" : {},
       "widgetProperties" : {
         "label": "Show Facilities without Markup"
@@ -45,7 +57,7 @@
     },
     "createMarkup": {
       "container": "simpleContainer",
-      "index" : 1.3,
+      "index" : 2.3,
       "widgetData" : {},
       "widgetProperties" : {
         "iconClass": "glyphicon glyphicon-plus",
@@ -56,7 +68,7 @@
     },
     "showFilters": {
       "container": "simpleContainer",
-      "index" : 1.2,
+      "index" : 2.2,
       "widgetData" : {},
       "widgetProperties" : {
         "label": "Show Filters",
@@ -76,7 +88,7 @@
     },
     "hideFilters": {
       "container": "simpleContainer",
-      "index" : 1.2,
+      "index" : 2.2,
       "widgetData" : {},
       "widgetProperties" : {
         "hidden": "true",
@@ -96,7 +108,7 @@
       "widgetType" : "Button"
     },
     "container2": {
-      "index" : 2,
+      "index" : 3,
       "widgetData" : {},
       "widgetProperties" : {
         "hidden": "true"
@@ -115,7 +127,7 @@
     },
     "entityCode": {
       "container": "container2",
-      "index": 2.1,
+      "index": 3.1,
       "widgetProperties": {
         "promptLabel": "Entity Code"
       },
@@ -127,7 +139,7 @@
     },
     "facility": {
       "container": "container2",
-      "index": 2.2,
+      "index": 3.2,
       "widgetProperties": {
         "promptLabel": "Facility"
       },
@@ -138,7 +150,8 @@
       "widgetType": "Select"
     },
     "distributor": {
-      "container": "container2", "index": 2.3,
+      "container": "container2",
+      "index": 3.3,
       "widgetProperties": {
         "promptLabel": "Distributor"
       },
@@ -150,7 +163,7 @@
     },
     "clear": {
       "container": "container2",
-      "index" : 2.5,
+      "index" : 3.5,
       "widgetData" : {},
       "widgetProperties" : {
         "label": "Clear"
@@ -159,13 +172,34 @@
     },
     "filterButton": {
       "container": "container2",
-      "index" : 2.4,
+      "index" : 3.4,
       "widgetData" : {},
       "widgetProperties" : {
         "label": "Filter",
         "baseClass": "button-default"
       },
       "widgetType" : "Button"
+    },
+    "begin": {
+      "index": 1,
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/beginMessage.json",
+        "fixtures": true,
+        "serviceUrl": "services/your/service/here"
+      },
+      "widgetBindings": {
+        "orgFilter": [{
+          "event": "change",
+          "action": "hide",
+          "query": "id!=0"
+        }]
+      },
+      "widgetProperties": {
+        "border": "",
+        "title": "",
+        "dismissible": "true"
+      },
+      "widgetType": "Callout"
     },
     "managedFacilitiesListGrid": {
       "index" : 3,
@@ -174,7 +208,17 @@
         "fixtures": true,
         "serviceUrl": "services/your/service/here"
       },
-
+      "widgetBindings": {
+        "orgFilter": [{
+          "event": "change",
+          "action": "hide",
+          "query": "id=0"
+        }, {
+          "event": "change",
+          "action": "show",
+          "query": "id!=0"
+        }]
+      },
       "widgetProperties" : {
         "components": ["editMarkUp"],
         "gridOptions": {

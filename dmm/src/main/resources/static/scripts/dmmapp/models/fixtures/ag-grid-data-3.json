@@ -1,0 +1,22 @@
+{
+  "data":[
+    {
+      "title" : "Managed Facilities List",
+      "id": 1,
+      "Entity Code": "703344",
+      "Facility": "CONCENTRA INC 1076",
+      "Distributor": "A MATTER OF FAX,HARRISON NJ",
+      "Start Date": "12/05/2021",
+      "End Date": "12/29/2021",
+      "Markup": "6.50%"
+    },
+    {
+      "id": 2,
+      "Entity Code": "GA0073",
+      "Facility": "ADVENTHEALTH GORDON",
+      "Distributor": "ACE SURGICAL SUPPLY CO INC, BROCKTON MA",
+      "Start Date": "02/01/2023",
+      "End Date": "09/30/2023",
+      "Markup": "5.00%"
+    }
+  ]}
