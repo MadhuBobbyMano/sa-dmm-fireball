@@ -2,7 +2,10 @@
   "title": "Distributor Markup",
   "breadcrumbTitle": "Distributor Mark-up Manager",
   "filters": {
-    "container1": "on"
+    "container1": "on",
+    "orgFilter": "on",
+    "helpIcon": "on",
+    "help": "on"
   },
   "menuOptions": {
   },

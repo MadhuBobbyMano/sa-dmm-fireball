@@ -204,11 +204,13 @@
 }
 .simpleContainer{
   background: #3896ce;
-
+  position: relative;
+  top: -14px;
 }
 .simpleContainer .shady-Container{
   position: relative;
   top: -3px;
+  padding-bottom: 7px;
 }
 
 .managedFacilitiesList .pds-text{
@@ -224,7 +226,7 @@
 .container2{
   background: #b1d1e3;
   padding-bottom: 5px;
-  margin-bottom: 5px;
+  margin-bottom: -16px;
   position: relative;
   top: -26px;
 }
@@ -278,6 +280,8 @@ header{
 
 .ag-grid-table-outer{
   margin-top: -30px;
+  position: relative;
+  top: -18px;
 }
 
 .pds-callout{
@@ -349,7 +353,6 @@ header{
   bottom: 15px;
 }
 .infoContainer .shady-container{
-  border: 1px solid black;
   position: relative;
   top: 15px;
   width: 960px;
@@ -397,4 +400,24 @@ header{
 
 .ag-table-grid-container .ag-grid-table-outer{
   margin-top: 1px;
+}
+
+.managedFacilitiesListGrid .ag-center-cols-container [col-id = 'Entity Code']{
+  width: 100px !important;
+  word-wrap: break-word;
+  background-color: #efefef;
+}
+
+.managedFacilitiesListGrid .ag-center-cols-container [col-id = 'Distributor']{
+  //left: 0 !important;
+  white-space: normal !important;
+  word-wrap: break-word;
+  width: 55% !important;
+}
+
+.managedFacilitiesListGrid .ag-center-cols-container [col-id = 'Facility']{
+  //left: 0 !important;
+  white-space: normal !important;
+  word-wrap: break-word;
+  width: 55% !important;
 }
