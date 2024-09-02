@@ -12,30 +12,97 @@
   margin-bottom: 10px;
 }
 
-.pds-callout--error{
+.helpIcon{
+  float: right;
+}
+
+.helpIcon .pds-icon{
+  background:rgb(0, 136, 204) ;
+  color: white;
+  border: 2px double white;
+  border-radius: 100%;
+  font-size: medium;
+  padding: -0px;
+  margin: 8px 0px 5px 4px;
+}
+.helpIcon .pds-button{
   position: relative;
-  bottom: 27px;
-  margin-bottom: -30px;
+  right: 15px;
+  bottom: 15px;
+}
+.view-title{
+  width: 350px;
 }
 
-.pds-callout__body{
+.breadcrumbs ul,
+.breadcrumbs ul a{
+  color: white;
+}
+.view-title h2{
+  font-size: 22px;
+}
+.container1{
+  float: right;
+  width: 600px;
+  height: 40px;
   color: black;
-  font-size: 15px;
+  //border: 1px solid black;
+  position: absolute;
+  top: 130px;
+  left: 560px;
+  margin-bottom: 30px;
+  padding-top: 20px;
 }
 
-.fireball-widget > .begin{
-  background: rgb(188, 232, 241);
-  height: 80px;
+.parentHealthSystem {
+  float:right;
+  color: black;
+  font-size: small;
+  padding-right: 12px;
+  width: 200px;
+  padding-top: 4px;
 }
+
+.orgFilter{
+  float: right;
+  width: 250px;
+  padding-left: 5px;
+}
+
+.orgFilter .prompt-orgFilter{
+  position: relative;
+  left: -130px;
+  font-size: small;
+}
+
+.orgFilter .btn-default{
+  width: 270px;
+  position: relative;
+  top: -27px;
+}
+.help{
+  float: right;
+  margin-left: -10px;
+  position: relative;
+  right: 10px;
+}
+//s-callout--error{
+//  position: relative;
+//  bottom: 27px;
+//  margin-bottom: -30px;
+//}
+
+//.pds-callout__body{
+//  color: black;
+//  font-size: 15px;
+//}
 
 .button-label{
   //color: blue;
-  font-size: 17px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.help{
-  margin-left: 10px;
-}
 .managedFacilitiesList{
   float: left;
   color: white;
@@ -47,49 +114,63 @@
 
 .showFacilitiesWithoutMarkup{
   float: right;
-  margin: 15px 10px;
+  margin: 18px 4px;
   width: fit-content;
   color: white;
   font-weight: 600;
+  font-size: small;
 }
 
 .showFacilitiesWithoutMarkup span.button-label{
   color:white;
+  //text-decoration: underline;
+  line-height: 30px;
 }
-
+.showFacilitiesWithoutMarkup span.button-label:hover{
+  text-decoration: underline;
+}
 .createMarkup span.button-label{
-  color: black;
+  color: #4e4545;
 }
 
+.createMarkup .button-label{
+  margin-right: -15px;
+}
 .showFilters span.button-label{
-  color: black;
+  color: #4e4545;
 }
 .createMarkup{
   float: right;
-  margin: 15px 10px;
+  margin: 18px 0px;
   background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
   border: 1px solid white;
   border-radius: 2px;
   color:white ;
 }
 
+.createMarkup .button-default{
+  width: 160px;
+  text-align: center;
+  padding-right: 15px;
+}
 .showFilters{
   float: right;
-  margin: 15px 10px;
+  margin: 18px 8px;
   background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
   border: 1px solid white;
   border-radius: 2px;
-  padding: 0px 5px;
+  padding: 1px 0px 2px 12px;
   width: 103px;
 }
 
 .hideFilters{
   float: right;
-  margin: 15px 10px;
+  margin: 18px 8px;
   background: linear-gradient(rgb(255, 255, 255) 0%, rgb(206, 209, 214) 100%);
   border: 1px solid white;
   border-radius: 2px;
   padding-left: 10px;
+  padding-bottom: 3px;
   width: 103px;
 }
 .entityCode{
@@ -120,10 +201,14 @@
 }
 .simpleContainer{
   background: #3896ce;
-  height: max-content;
+
+}
+.simpleContainer .shady-Container{
+  position: relative;
+  top: -3px;
 }
 
-.pds-text{
+.managedFacilitiesList .pds-text{
   color: white;
   font-size: 25px;
   font-weight: bold;
@@ -137,6 +222,8 @@
   background: #b1d1e3;
   padding-bottom: 5px;
   margin-bottom: 5px;
+  position: relative;
+  top: -26px;
 }
 
 .clear{
@@ -156,26 +243,19 @@
   width: 50px;
 }
 
-.pds-icon{
-  padding-top: 5px ;
-  border-radius: 50%;
-  background: #c5e2f1;
-  color: rgba(245, 245, 245, 0.92);
-  border: 2px solid rgba(245, 245, 245, 0.85);
-  height: 15px;
-  width: 15px;
-  margin: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-}
+
 .dmmapp{
   width: 1000px;
 }
 
 .fireball-container{
   background: #116CB3;
+  padding-top: 35px;
 }
 
+.landing .dmmapp{
+  margin-top: 50px;
+}
 .pds-frame__content{
   background: #116CB3;
 }
@@ -185,6 +265,7 @@ header{
   font-weight: 700;
   font-size: xx-large;
   color: black;
+  line-height: 30px;
 }
 
 .btn-primary{
@@ -209,4 +290,100 @@ header{
 
 .pds-callout__dismiss{
   padding: -0px;
+}
+
+.glyphicon-plus{
+  line-height: 1.4;
+  padding: 1px 2px 4px 3.5px;
+  background: #5ecb5e;
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  font-size: xx-small;
+  //padding: 1px 2px 4px 3px;
+  margin: 5px -18px 9px 8px;
+
+}
+
+.ag-header-cell{
+  background: rgb(197, 197, 197);
+}
+
+.breadcrumb-container{
+  margin-top: -45px;
+}
+
+.app-wrapper .dmmapp{
+  margin: 55px auto;
+  background: #fdfdec;
+  height: 2000px;
+}
+
+.pds-header__branding-title{
+  color: black;
+  padding-left: 200px;
+}
+
+.info{
+  float: right;
+  position: absolute;
+  left: 35px;
+  top: 18px;
+}
+.infoContainer{
+  float: right;
+}
+.infoIcon .pds-icon{
+  color: white;
+  background: rgb(66, 178, 234);
+  border-radius: 30px;
+  padding: 2px;
+  border: 1px solid white;
+  margin-top: -8px;
+}
+.managedFacilitiesListGrid{
+  position: relative;
+  bottom: 15px;
+}
+.infoContainer .shady-container{
+  border: 1px solid black;
+  position: relative;
+  top: 15px;
+  width: 960px;
+  background: #BCE8F1;
+  border-radius: 5px;
+  padding-top: 16px;
+}
+.infoContainer .pds-text{
+  color: black;
+}
+
+.infoClose{
+  float: right;
+}
+.infoClose .pds-icon{
+  min-width: 1.25em;
+  position: relative;
+  bottom: 51px;
+  right: 4px;
+  color: white;
+  border: 2px solid #f0f0f0;
+  border-radius: 30px;
+}
+
+.infoClose .pds-button{
+  background: transparent;
+  border: none;
+}
+
+.pds-button--ghost{
+  background: transparent;
+  border: none;
+}
+.top-box h2{
+  padding-top: 7px;
+}
+
+.ag-table-grid-container .ag-grid-table-outer{
+  margin-top: 1px;
 }
