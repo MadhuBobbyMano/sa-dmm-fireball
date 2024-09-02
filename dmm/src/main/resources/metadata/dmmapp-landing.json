@@ -89,12 +89,11 @@
       "widgetType" : "Text"
     },
       "infoClose": {
-        "container": "infoContainer",
         "index" : 2.3,
         "widgetData" : {},
         "widgetProperties" : {
           "icon": "close",
-          "aria-label": "info"
+          "aria-label": "info1"
         },
         "widgetType" : "IconButton"
       },
