@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "entity_code": "FL0345",
+    "facility": "ADVENTHEALTH APOPKA"
+  },
+  {
+    "id": 2,
+    "entity_code": "FL2308",
+    "facility": "ADVENTHEALTH CELEBRATION"
+  },
+  {
+    "id": 3,
+    "entity_code": "CA2043",
+    "facility": "BRADLEY MEMORIAL CAMPUS"
+  },
+  {
+    "id": 4,
+    "entity_code": "W10013",
+    "facility": "BACKUS HEALTH SYSTEMS"
+  },
+  {
+    "id": 5,
+    "entity_code": "W10013",
+    "facility": "GOLDEN LINING PITTSBURGH CENTRA BUSINESS OFFICE"
+  },
+  {
+    "id": 6,
+    "entity_code": "658507",
+    "facility": "ADVENTIST HEALTH"
+  }
+]

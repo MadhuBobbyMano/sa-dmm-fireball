@@ -1,32 +1,31 @@
 define(["Class"], function (Class) {
-        "use strict";
+    "use strict";
 
-        return Class.extend({
+    return Class.extend({
 
-            init(params) {
-                this._params = params;
-                this.eGui = document.createElement("div");
-                let button = document.createElement("button");
-                button.className = "btn-primary";
-                button.textContent = "Edit Markup";
-                this.eventListener = () => alert("clicked");
-                button.addEventListener("click", this.eventListener);
-                this.eGui.appendChild(button);
-            },
+        init(params) {
+            this._params = params;
+            this.eGui = document.createElement("div");
+            this.Editbutton = document.createElement("button"); // Changed from local to instance property
+            this.Editbutton.className = "btn-primary";
+            this.Editbutton.textContent = "Edit Markup";
+            this.eventListener = () => alert("clicked");
+            this.Editbutton.addEventListener("click", this.eventListener);
+            this.eGui.appendChild(this.Editbutton);
+        },
 
-            getGui() {
-                return this.eGui;
-            },
+        getGui() {
+            return this.eGui;
+        },
 
-            refresh(params) {
-                return true;
-            },
+        refresh(params) {
+            return true;
+        },
 
-            destroy() {
-                if (button) {
-                    button.removeEventListener("click", this.eventListener);
-                }
+        destroy() {
+            if (this.Editbutton) {
+                this.Editbutton.removeEventListener("click", this.eventListener);
             }
-        })
-    }
-)
+        }
+    })
+});

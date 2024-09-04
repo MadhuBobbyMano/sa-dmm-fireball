@@ -11,54 +11,21 @@
     }
   },
   "filters": {
-    "orgFilter": {
-      "index": 1.2,
-      "widgetProperties": {
-        "promptLabel": "Parent Health System"
-      },
-
-      "widgetData": {
-        "fixtureUrl": "scripts/dmmapp/models/fixtures/orgFilterData.json",
-        "fixtures": true
-      },
-      "widgetType": "Select"
-    },
-    "help": {
-      "index": 1.3,
-      "widgetData": {},
-      "widgetProperties": {
-        "label": "Help!",
-        "targetUrl": "https://distributormarkup.premierinc.com/content/SupplyChain/dmm-help/WebHelp/Content/Home.html"
-      },
-      "widgetType": "Button"
-    },
-    "begin": {
-      "index": 1.1,
-      "widgetData": {
-        "fixtureUrl": "scripts/dmmapp/models/fixtures/beginMessage.json",
-        "fixtures": true,
-        "serviceUrl": "services/your/service/here"
-      },
-      "widgetBindings": {
-        "orgFilter": {
-          "event": "change",
-          "action": "hide"
-        }
-      },
-      "widgetProperties": {
-        "border": "",
-        "title": "",
-        "dismissible": "true"
-      },
-      "widgetType": "Callout"
-    }
 
   },
   "views": {
     "landing": {
       "index": 1,
       "triggers": [
-        "_startup_"
+        "_startup_",
+        "managedFacilitiesButton.change"
+      ],
+      "_ref": true
+    },
+    "withoutMarkup": {
+      "index": 2,
+      "triggers": [
+        "showFacilitiesWithoutMarkup.change"
       ],
       "_ref": true
     }

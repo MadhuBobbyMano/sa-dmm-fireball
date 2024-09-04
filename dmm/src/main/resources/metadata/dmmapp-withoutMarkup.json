@@ -1,0 +1,244 @@
+{
+  "title": "Distributor Markup",
+  "breadcrumbTitle": "Facilities Without Markup",
+  "filters": {
+    "container1": "on",
+    "orgFilter": "on",
+    "helpIcon": "on",
+    "help": "on"
+  },
+  "menuOptions": {
+  },
+  "viewProperties": {
+    "singleInstance": true,
+    "deepLinkParams": {}
+  },
+  "widgets": {
+    "container1": {
+      "index": 1,
+      "widgetData": {},
+      "widgetProperties": {},
+      "widgetType": "SimpleContainer"
+    },
+    "orgFilter": {
+      "container": "container1",
+      "index": 1.3,
+      "widgetProperties": {
+        "promptLabel": "Parent Health System"
+      },
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/orgFilterData.json",
+        "fixtures": true
+      },
+      "widgetType": "Select"
+    },
+    "helpIcon": {
+      "container": "container1",
+      "index": 1.2,
+      "widgetData": {},
+      "widgetProperties": {
+        "icon": "question",
+        "aria-label": "question"
+      },
+      "widgetType": "IconButton"
+    },
+    "help": {
+      "container": "container1",
+      "index": 1.1,
+      "widgetData": {},
+      "widgetProperties": {
+        "label": "Help",
+        "targetUrl": "https://distributormarkup.premierinc.com/content/SupplyChain/dmm-help/WebHelp/Content/Home.html"
+      },
+      "widgetType": "Button"
+    },
+    "withoutMarkupContainer": {
+      "index": 1,
+      "widgetData": {},
+      "widgetProperties": {
+      },
+      "widgetType": "SimpleContainer"
+    },
+    "facilitiesListLabel": {
+      "index": 1.4,
+      "container": "withoutMarkupContainer",
+      "widgetData": {},
+      "widgetProperties": {
+        "tagName": "p",
+        "children": [
+          {
+            "text": "Facilities List"
+          }
+        ]
+      },
+      "widgetType": "Text"
+    },
+    "managedFacilitiesButton": {
+      "index": 1.3,
+      "container": "withoutMarkupContainer",
+      "widgetData": {},
+      "widgetProperties": {
+        "label": "Show only managed facilities",
+        "baseClass": "button-default"
+      },
+      "widgetType": "Button"
+    },
+    "createNewMkupButton": {
+      "index": 1.2,
+      "container": "withoutMarkupContainer",
+      "widgetData": {},
+      "widgetProperties": {
+        "label": "Create New Markup",
+        "iconClass": "glyphicon glyphicon-plus",
+        "baseClass": "button-default",
+        "color": "green"
+      },
+      "widgetType": "Button"
+    },
+    "showHideButton": {
+      "index": 1.1,
+      "container": "withoutMarkupContainer",
+      "widgetData": {},
+      "widgetBindings": {
+        "showHideButton": {
+          "event": "click",
+          "action": "hide"
+        },
+        "hideButton": {
+          "event": "click",
+          "action": "show"
+        }
+      },
+      "widgetProperties": {
+        "label": "Show filters",
+        "baseClass": "button-default"
+      },
+      "widgetType": "Button"
+    },
+    "hideButton": {
+      "index": 1.1,
+      "container": "withoutMarkupContainer",
+      "widgetData": {},
+      "widgetProperties": {
+        "hidden": "true",
+        "label": "Hide filters",
+        "baseClass": "button-default"
+      },
+      "widgetBindings": {
+        "showHideButton": {
+          "event": "click",
+          "action": "show"
+        },
+        "hideButton": {
+          "event": "click",
+          "action": "hide"
+        }
+      },
+      "widgetType": "Button"
+    },
+    "filtersContainer": {
+      "index" : 4,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "hidden": "true"
+      },
+      "widgetType" : "SimpleContainer",
+      "widgetBindings": {
+        "showHideButton": {
+          "event": "click",
+          "action": "show"
+        },
+        "hideButton": {
+          "event": "click",
+          "action": "hide"
+        }
+      }
+    },
+    "entityCode": {
+      "container": "filtersContainer",
+      "index": 4.1,
+      "widgetProperties": {
+        "promptLabel": "Entity Code"
+      },
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/orgFilterData.json",
+        "fixtures": true
+      },
+      "widgetType": "Select"
+    },
+    "facility": {
+      "container": "filtersContainer",
+      "index": 4.2,
+      "widgetProperties": {
+        "promptLabel": "Facility"
+      },
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/orgFilterData.json",
+        "fixtures": true
+      },
+      "widgetType": "Select"
+    },
+    "clear": {
+      "container": "filtersContainer",
+      "index" : 4.5,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "label": "Clear"
+      },
+      "widgetType" : "Button"
+    },
+    "filterButton": {
+      "container": "filtersContainer",
+      "index" : 4.4,
+      "widgetData" : {},
+      "widgetProperties" : {
+        "label": "Filter",
+        "baseClass": "button-default"
+      },
+      "widgetType" : "Button"
+    },
+    "newMkupGrid": {
+      "index": 5,
+      "widgetData": {
+        "fixtureUrl": "scripts/dmmapp/models/fixtures/withoutMarkupStatic.json",
+        "fixtures": true,
+        "serviceUrl": "services/your/service/here"
+      },
+      "widgetProperties": {
+        "components": [
+          "withoutMarkup"
+        ],
+        "gridOptions": {
+          "pagination": true,
+          "paginationPageSize": 25,
+          "rowSelection": "multiple",
+          "suppressRowClickSelection": true,
+          "defaultColDef": {
+            "flex": 1
+          },
+          "columnDefs": [
+            {
+              "headerName": "Entity Code",
+              "field": "entity_code",
+              "sortable": true,
+              "resizable": true,
+              "suppressMenu": true
+            },
+            {
+              "headerName": "Facility",
+              "field": "facility",
+              "sortable": true,
+              "resizable": true
+            },
+            {
+              "headerName": " ",
+              "field": "newMarkupBtn",
+              "cellRenderer": "withoutMarkup"
+            }
+          ]
+        }
+      },
+      "widgetType": "AGGrid"
+    }
+  }
+}
